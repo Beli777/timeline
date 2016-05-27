@@ -1,0 +1,147 @@
+@import 'jquery/fullpage.scss';
+#section0{
+}
+    .timeline{
+        &__section{
+        font-size: 0;
+        position: relative;
+        visibility: visible;
+            &-left,
+            &-right{
+                display: inline-block;
+                width: 50%;
+                vertical-align: middle;
+            }
+        }
+        &__block{
+            opacity: 0;
+            @extend .animation-show;
+            &-text{
+                font-size: 2rem;
+                padding: 5rem;
+            }
+        }
+        &__image{
+            opacity: 0;
+            @extend .animation-move;
+        }
+        &__year{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 1.5rem;
+            @extend .animation-show;
+            opacity: 0;
+            &-fill{
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                border-radius: 15px;
+                @extend .animation-fill;
+            }
+        }
+        .line{
+            background-color: red;
+            width: 3px;
+            position: absolute;
+            left: 50.96%;
+            height: 0vh;
+            top: 0;
+            transition: 3s;
+            @extend .animation-line;
+        }
+    }
+
+//ANIMATIONS
+    @-webkit-keyframes show {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes show {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes move {
+      0% {
+        margin-left: -1000px;
+      }
+      100% {
+        margin-left: 0px;
+      }
+    }
+    @keyframes move {
+        0% {
+          opacity: 0;
+          margin-left: -1000px;
+        }
+        100% {
+          opacity: 1;
+          margin-left: 0px;
+        }
+    }
+
+    @-webkit-keyframes fill {
+      0% {
+        background-color: white;
+      }
+      100% {
+        background-color: yellow;
+      }
+    }
+    @keyframes fill {
+        0% {
+            background-color: #fff;
+        }
+        100% {
+            background-color: red;
+        }
+    }
+    @keyframes line {
+        0% {
+            height: 0vh;
+        }
+        100% {
+            height: 55vh;
+        }
+    }
+    .animation-show{
+        -webkit-animation: show 1.0s forwards;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-delay: 5s;
+        animation: show 1.0s forwards;
+        animation-iteration-count: 1;
+        animation-delay: 1s;
+    }
+    .animation-move{
+        -webkit-animation: move 1.0s forwards;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-delay: 5s;
+        animation: move 1.0s forwards;
+        animation-iteration-count: 1;
+        animation-delay: 0.8s;
+    }
+    .animation-fill{
+        -webkit-animation: fill 1.0s forwards;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-delay: 5s;
+        animation: fill 1.0s forwards;
+        animation-iteration-count: 1;
+        animation-delay: 1.7s;
+    }
+    .animation-line{
+        -webkit-animation: line 1.0s forwards;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-delay: 5s;
+        animation: line 1.0s forwards;
+        animation-iteration-count: 1;
+        animation-delay: 1.5s;
+    }
